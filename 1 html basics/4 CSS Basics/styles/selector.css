@@ -1,0 +1,16 @@
+p {
+  color: green;
+}
+
+#para3 {
+  color: red;
+}
+
+.article {
+  color: black;
+}
+
+.code {
+  color: grey;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

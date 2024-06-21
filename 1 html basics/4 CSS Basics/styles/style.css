@@ -1,0 +1,16 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+}
+
+h1 {
+  /*font-size: 35px;*/
+  color: blue;
+}
+/* I will change this color later */ 
+p {
+  color: red;
+}
+h2 {
+  color: darkolivegreen;
+}
