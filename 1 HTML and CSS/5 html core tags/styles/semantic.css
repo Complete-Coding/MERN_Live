@@ -1,0 +1,31 @@
+/** {
+  margin: 0;
+  padding: 0;
+}*/
+
+header {
+  background-color: aquamarine;
+}
+main {
+  background-color: dodgerblue;
+}
+#first_section {
+  background-color: bisque;
+}
+#second_section {
+  background-color: chocolate;
+}
+footer {
+  background-color: crimson;
+}
+h1 {
+  font-size: 20px;
+  background-color: fuchsia;
+}
+a {
+  background-color: lightcoral;
+}
+
+span {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

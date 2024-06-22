@@ -1,0 +1,22 @@
+.top_heading {
+  color: red;
+}
+
+/* This is not the class for top heading*/
+#heading {
+  color: blue;
+}
+
+#new_div {
+  color: aquamarine;
+}
+p {
+  color: tomato;
+}
+.small_heading {
+  color: slateblue;
+}
+
+#parrot, #cow {
+  color: cadetblue;
+}
