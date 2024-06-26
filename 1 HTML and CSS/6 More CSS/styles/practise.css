@@ -1,0 +1,12 @@
+/*this is a comment*/
+.my-div {
+  background-color: rgba(134, 203, 190, 0.5);
+  color: #aa7800;
+}
+
+.image-container {
+  height: 150px;
+  width: 150px;
+  background: #ff0000 url(../images/html.png)  no-repeat;
+  background-size: contain;
+}
