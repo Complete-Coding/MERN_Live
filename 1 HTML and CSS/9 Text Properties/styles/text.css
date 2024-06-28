@@ -1,0 +1,10 @@
+.my-text {
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(175, 25, 157);
+}
+
+#kg-link {
+  text-decoration: none;
+}
