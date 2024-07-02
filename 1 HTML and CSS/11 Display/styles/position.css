@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  background-color: deepskyblue;
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#box1 {
+  position: static;
+}
+
+#box2 {
+  position: relative;
+  top: 22px;
+  right: 5px;
+}
+
+#box3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#box4 {
+  position: fixed;
+  top: 22px;
+  left: 40px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Learning Display Property</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .box {
+      font-size: 25px;
+      height: 50px;
+      width: 100px;
+      margin: 5px;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 2px dotted black;
+      background-color: chocolate;
+      display: inline-block;
+    }
+    #box2 {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">Box 1</div>
+  <div id="box2" class="box">Box 2</div>
+
+  <span>Span 1</span>
+  <span>Span 2</span>
+</body>
+</html>
