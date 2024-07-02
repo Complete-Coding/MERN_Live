@@ -28,10 +28,12 @@
   position: absolute;
   top: 0px;
   left: 0px;
+  z-index: 0;
 }
 
 #box4 {
   position: fixed;
   top: 22px;
   left: 40px;
+  z-index: -1;
 }
