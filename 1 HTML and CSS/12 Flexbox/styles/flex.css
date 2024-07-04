@@ -3,14 +3,43 @@
   padding: 0;
 }
 
+#box1 {
+  flex-shrink: 0;
+  flex-grow: 4;
+  order: 2;
+}
+
+#box2 {
+  /* align-self: end; */
+  flex-shrink: 4;
+  flex-grow: 1;
+  order: 4;
+}
+#box3 {
+  order: 1;
+}
+#box4 {
+  order: 6;
+}
+#box5 {
+  order: 3;
+}
+#box6 {
+  order: 5;
+}
+
 .container {
   background-color: tomato;
+  height: 500px;
   border: 2px solid black;
   margin: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   flex-wrap: wrap;
+  /*justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-evenly;*/
 }
 
 .box {
@@ -22,12 +51,4 @@
   box-sizing: content-box;
   border: 2px solid black;
   border-radius: 4px;
-}
-
-#box1 {
-  
-}
-
-#box2 {
-
 }
