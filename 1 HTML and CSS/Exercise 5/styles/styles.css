@@ -24,3 +24,64 @@ a {
   color: white;
   text-decoration: none;
 }
+
+body {
+  background-color: #7fffd44a;
+}
+
+.container {
+  background-color: darkkhaki;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  background-color: salmon;
+  margin: 5px;
+  display: inline-block;
+}
+
+#fixed-box {
+  position: fixed;
+  right: 10px;
+}
+
+#bottom-div {
+  height: 250px;
+  width: 250px;
+  background-color: chocolate;
+  position: absolute;
+  right: 20px;
+}
+
+#top-div {
+  height: 200px;
+  width: 200px;
+  background-color: greenyellow;
+  position: absolute;
+  right: 45px;
+  margin-top: 25px;
+  z-index: 1;
+}
+
+.my-circle {
+  background-color: green;
+  width: 200px;
+  height: 200px;
+  margin: 25px;
+  border-radius: 50%;
+}
+
+footer {
+  background-color: darkslategray;
+  padding: 25px 0px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  position: absolute;
+  bottom: 0px;
+}

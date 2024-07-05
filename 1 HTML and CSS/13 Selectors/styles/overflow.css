@@ -1,0 +1,26 @@
+.container {
+  width: 250px;
+  height: 100px;
+  background-color: aqua;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  margin-bottom: 50px;
+}
+
+.visible {
+  overflow: visible;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+.auto {
+  overflow: auto;
+}
