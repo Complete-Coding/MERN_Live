@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Transition</title>
+  <style>
+    .box {
+      height: 50px;
+      width: 100px;
+      background-color: aquamarine;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      border: 3px solid black;
+      box-sizing: border-box;
+      /*transition-property: background-color;
+      transition-duration: 1s;
+      transition-timing-function: ease-out;
+      transition-delay: 3s;*/
+      transition: all 1s;
+    }
+
+    .box:hover {
+      width: 200px;
+      background-color: blueviolet;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box">My Box</div>
+</body>
+</html>
