@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Media Query</title>
+  <style>
+    .box {
+      background-color: coral;
+      height: 100px;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+
+    @media (width: 500px) {
+      .box {
+        border: 10px solid black;
+      }
+    }
+
+    @media (min-width: 500px) and (max-width: 600px) {
+      .box {
+        height: 150px;
+        width: 150px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .box {
+        height: 75px;
+        width: 75px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box"> My Box</div>
+</body>
+</html>

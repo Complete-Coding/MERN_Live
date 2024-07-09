@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS Variables</title>
+  <style>
+    html {
+      --main-bg-color: #c24141;
+      --border-color: #000000;
+      --main-box-color: #953082;
+      --main-text-color: #ffffff;
+    }
+    .container {
+      background-color: var(--main-bg-color, #953082);
+      display: flex;
+      padding: 10px;
+      border: 2px solid var(--border-color);
+      color: var(--main-text-color);
+    }
+    .box {
+      width: 50px;
+      height: 50px;
+      border: 2px solid var(--border-color);
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--main-text-color);
+      background-color: var(--main-box-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    This is a box container
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <div class="box">Box 4</div>
+  </div>
+</body>
+</html>
