@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-rows: 200px 1fr 100px;
+  grid-template-columns: 300px 1fr 1fr 200px;
+  grid-template-areas: 
+  "top top top top"
+  "burger items items items"
+  "bottom bottom bottom bottom";
+  gap: 5px;
+  height: 100vh;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  border: 2px solid black;
+}
+
+.header {
+  background-color: aquamarine;
+  grid-area: top;
+}
+
+.footer {
+  background-color: cornflowerblue;
+  grid-area: bottom;
+
+}
+
+.sidemenu {
+  background-color: coral;
+  grid-area: burger;
+}
+
+.shoes {
+  background-color: palegreen;
+  grid-area: items;
+}

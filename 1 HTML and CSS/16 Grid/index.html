@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>First Grid</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background-color: violet;
+      display: grid;
+      grid-template-rows: repeat(20, 50px) 100px;
+      grid-template-columns: repeat(auto-fit, 150px);
+      grid-auto-rows: 100px;
+      grid-auto-columns: 100px;
+      gap: 2px;
+      /*overflow: auto;
+      max-height: 150px;*/
+    }
+    .cell {
+      background-color: teal;
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid tomato;
+      border-radius: 5px;
+    }
+    .item7 {
+      /*grid-row-start: 3;
+      grid-column-start: 1;
+      grid-column-end: -1;*/
+      
+      /*grid-row: 3 / 4;
+      grid-column: 1 / -1;*/
+
+      grid-area: 3 / 1 / 4 / -1;
+    }
+    .item1 {
+      /*grid-row-start: 2;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 4;*/
+
+      /* grid-row: 2 / 4;
+      grid-column: 2 / 4; */
+
+      grid-area: 2 / 2 / 4 / 4;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cell item1"> 1 </div>
+    <div class="cell"> 2 </div>
+    <div class="cell"> 3 </div>
+    <div class="cell"> 4 </div>
+    <div class="cell"> 5 </div>
+    <div class="cell"> 6 </div>
+    <div class="cell item7"> 7 </div>
+    <div class="cell"> 8 </div>
+    <div class="cell"> 9 </div>
+    <div class="cell"> 10 </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Justify-Content & Align-Items</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-rows: repeat(3, 100px);
+      grid-template-columns: repeat(3, 100px);
+      gap: 5px;
+      justify-content: space-evenly;
+      align-content: space-evenly;
+      border: 2px solid black;
+      height: 800px;
+    }
+
+    .item {
+      align-content: center;
+      background-color: coral;
+      border: 1px solid black;
+      font-size: 30px;
+      height: 50px;
+      width: 50px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+  </div>
+</body>
+</html>
