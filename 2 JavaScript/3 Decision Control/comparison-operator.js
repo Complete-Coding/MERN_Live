@@ -10,3 +10,10 @@ if (age >= 18) {
   console.log('You are a minor');
 }
 console.log('Program end');
+
+let a = 1;
+if (a) {
+  console.log('truthy');
+} else {
+  console.log('falsy');
+}
