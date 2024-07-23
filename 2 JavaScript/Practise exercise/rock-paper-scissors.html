@@ -8,50 +8,11 @@
     <h1>Rock Paper Scissors Game</h1>
     <p>Click one of the following to play the game</p>
     
-    <button class="choice-button" onclick="
-      let randomChoice = Math.floor(Math.random() * 3 + 1);
-      let computerChoiceText;
-      if (randomChoice === 1) {
-        computerChoiceText = `👊 Rock`;
-      } else if (randomChoice === 2) {
-        computerChoiceText = `✋ Paper`;
-      } else if (randomChoice === 3) {
-        computerChoiceText = `✌️ Scissors`;
-      }
-      document.querySelector('#result').innerHTML = `You chose 👊 Rock. <br>
-       Computer chose ${computerChoiceText}.`;
-    ">👊 Rock</button>
-
-    <button class="choice-button"onclick="
-    let computerChoice = Math.floor(Math.random() * 3 + 1);
-      let computerChoiceText;
-      if (computerChoice === 1) {
-        computerChoiceText = `👊 Rock`;
-      } else if (computerChoice === 2) {
-        computerChoiceText = `✋ Paper`;
-      } else {
-        computerChoiceText = `✌️ Scissors`;
-      }
-      document.querySelector('#result').innerHTML = `You chose ✋ Paper. <br>
-       Computer chose ${computerChoiceText}.`;
-    
-    ">✋ Paper</button>
-    
-    <button class="choice-button"onclick="
-        let computerChoice = Math.floor(Math.random() * 3 + 1);
-      let computerChoiceText;
-      if (computerChoice === 1) {
-        computerChoiceText = `👊 Rock`;
-      } else if (computerChoice === 2) {
-        computerChoiceText = `✋ Paper`;
-      } else {
-        computerChoiceText = `✌️ Scissors`;
-      }
-      document.querySelector('#result').innerHTML = `You chose ✌️ Scissors. <br>
-       Computer chose ${computerChoiceText}.`;
-    ">✌️ Scissors</button>
-
-
+    <button class="choice-button" onclick="rockClicked();">👊 Rock</button>
+    <button class="choice-button"onclick="paperClicked();">✋ Paper</button>
+    <button class="choice-button"onclick="scissorsClicked();">✌️ Scissors</button>
     <h4 id="result"></h4>
+
+    <script src="script/game.js"></script>
   </body>
 </html>
