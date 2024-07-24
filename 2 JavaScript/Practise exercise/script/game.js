@@ -16,52 +16,45 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function rockClicked() {
-  let computerChoice1 = getComputerChoice();
-  
-  let result;
-  if (computerChoice1 == `👊 Rock`) {
-    result = 'Tie';
-  } else if (computerChoice1 == `✋ Paper`) {
-    result = 'I Won';
-  } else {
-    result = 'You Won';
-  }
+function updateResult(userChoice, computerChoice, result) {
+  document.querySelector('#result').innerHTML = 
+  `You chose ${userChoice}. <br>
+   I chose ${computerChoice}. <br>
+   And the result is: ${result}`;
+}
 
-  document.querySelector('#result').innerHTML = `You chose 👊 Rock. <br>
-    I chose ${computerChoice1}. <br>
-    And the result is: ${result}`;
+function getResult(userChoice, computerChoice) {
+  let result = 'Unknown';
+  if (userChoice === computerChoice) {
+    result = 'Tie';
+  } else if ((computerChoice === '👊 Rock' && userChoice === '✌️ Scissors') ||
+             (computerChoice === '✌️ Scissors' && userChoice === '✋ Paper') ||
+             (computerChoice === '✋ Paper' && userChoice === '👊 Rock')
+  ) {
+    result = 'I win';
+  } else {
+    result = 'You win';
+  }
+  return result;
+}
+
+function rockClicked() {
+  const userChoice = '👊 Rock';
+  let computerChoice = getComputerChoice();
+  let result = getResult(userChoice, computerChoice);
+  updateResult(userChoice, computerChoice, result);
 }
 
 function paperClicked() {
-  let computerChoiceText = getComputerChoice();
-
-  let result;
-  if (computerChoiceText == `👊 Rock`) {
-    result = 'You Won';
-  } else if (computerChoiceText == `✋ Paper`) {
-    result = 'Tie';
-  } else {
-    result = 'I Won';
-  }
-  document.querySelector('#result').innerHTML = `You chose ✋ Paper. <br>
-   I chose ${computerChoiceText}. <br>
-   And the result is: ${result}`;
+  const userChoice = '✋ Paper';
+  let computerChoice = getComputerChoice();
+  let result = getResult(userChoice, computerChoice);
+  updateResult(userChoice, computerChoice, result);
 }
 
 function scissorsClicked() {
-  let computerChoiceText = getComputerChoice();
-
-  let result;
-  if (computerChoiceText == `👊 Rock`) {
-    result = 'I Won';
-  } else if (computerChoiceText == `✋ Paper`) {
-    result = 'You Won';
-  } else {
-    result = 'Tie';
-  }
-
-  document.querySelector('#result').innerHTML = `You chose ✌️ Scissors. <br>
-   I chose ${computerChoiceText}. <br>
-   And the result is: ${result}`;
+  const userChoice = '✌️ Scissors';
+  let computerChoice = getComputerChoice();
+  let result = getResult(userChoice, computerChoice);
+  updateResult(userChoice, computerChoice, result);
 }

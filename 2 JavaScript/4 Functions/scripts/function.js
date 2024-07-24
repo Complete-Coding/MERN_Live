@@ -1,7 +1,7 @@
 function greeting() {
   console.log('Good Morning User');
 }
-greeting();
+// greeting();
 
 // return values between 1-4
 function getRandomOption() {
@@ -10,6 +10,14 @@ function getRandomOption() {
   return randomOption;
 }
 
-let myNumber = getRandomOption();
-console.log(`I got a random number: ${myNumber}`);
+// let myNumber = getRandomOption();
+// console.log(`I got a random number: ${myNumber}`);
+
+function getSum(num1, num2) {
+  let sum = num1 + num2;
+  return sum;
+}
+
+console.log(getSum(2, 3));
+console.log(getSum(456, 786));
 
