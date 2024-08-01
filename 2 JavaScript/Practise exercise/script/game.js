@@ -2,6 +2,10 @@ let score = {
   computer: 0,
   user: 0,
   tie: 0,
+  updateScore: function() {
+    document.querySelector('#score').innerHTML = `
+    Score: Computer Won: ${this.computer}, User Won: ${this.user}, Tie: ${this.tie}`;
+  }
 };
 
 function getRandomChoice() {
@@ -23,9 +27,6 @@ function getComputerChoice() {
 }
 
 function updateResult(userChoice, computerChoice, result) {
-  document.querySelector('#score').innerHTML = `
-  Score: Computer Won: ${score.computer}, User Won: ${score.user}, Tie: ${score.tie}`;
-
   document.querySelector('#result').innerHTML = 
   `You chose ${userChoice}. <br>
    I chose ${computerChoice}. <br>
@@ -47,6 +48,7 @@ function computeResult(userChoice, computerChoice) {
     result = 'You win';
     score.user++;
   }
+  score.updateScore();
   return result;
 }
 
