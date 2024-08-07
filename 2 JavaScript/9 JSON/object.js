@@ -27,7 +27,6 @@ console.log(Object.keys(student));
 
 let student2 = {
   firstName: 'Ranjan',
-  lastName: 'Dev',
   age: 24,
   address: {
       houseNo: 12,
