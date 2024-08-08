@@ -18,6 +18,3 @@ function processUserInput(process) {
 
 processUserInput(hello);
 processUserInput(capitalize);
-
-
-
