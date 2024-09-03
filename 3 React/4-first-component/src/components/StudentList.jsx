@@ -1,10 +1,11 @@
-const StudentList = () => {
-
-  const students = ['Ridoy', 'Nafees', 'Alok', 'Surya', 'Niraj', 'Ashish', 'Gurpreet', 'Yousuf']
-
+const StudentList = (props) => {
+  console.log(props.students);
+  if (!props.students) {
+    return <p>No students</p>;
+  }
   return <ol>
     {
-      students.map((student, index) => <li key={student}>{student}</li>)
+      props.students.map((student, index) => <li key={student}>{student}</li>)
     }
   </ol>;
 }
