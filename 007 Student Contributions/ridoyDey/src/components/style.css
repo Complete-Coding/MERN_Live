@@ -1,0 +1,124 @@
+.appName {
+  margin-top: 1rem;
+  font-family: "Neucha", Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: rgb(241, 219, 219);
+  z-index: 1;
+  text-align: center;
+}
+
+.inputForm {
+  margin-top: 0.8rem;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.inputField {
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  padding: 15px 20px;
+  border: none;
+  transition: 0.2s;
+  box-shadow: inset 0 0 5px black;
+}
+
+.inputField:focus {
+  box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.submitButton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #2f74c0;
+  transition: 0.2s all;
+  box-shadow: 0 0 10px black;
+}
+
+.submitButton:active {
+  scale: 0.8;
+}
+
+/* Style of the TodoItems 
+and TodoItem components */
+.todoItems {
+  margin: 2rem 1rem 1rem 1rem;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.todoItem {
+  margin-top: .8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  flex-grow: 1;
+  background-color: rgb(50, 195, 205);
+  padding: 1rem; 
+  width: calc(83% / 3);
+  border-radius: 5px;
+  color: rgb(25, 25, 25);
+  box-shadow: 0 0 4px rgb(65, 64, 64);
+}
+
+.todoName{
+  font-family: "Neucha", Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  flex-grow: 1;
+}
+
+.iconContaier{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.icon{
+  font-size: 1.3rem;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 1s all;
+}
+
+/* Editable field */
+.editableInput{
+    background: #3a69eb;
+    outline: none;
+    padding: 3px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .todoItem {
+    width: calc(50% - 10px); /* 2-column layout on tablet size */
+  }
+}
+
+@media (max-width: 480px) {
+  .todoItem {
+    width: calc(100% - 10px); /* Full width for mobile */
+  }
+}
