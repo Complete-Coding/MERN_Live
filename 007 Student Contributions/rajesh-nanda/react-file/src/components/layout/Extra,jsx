@@ -1,0 +1,42 @@
+export const Header = () => {
+  return (
+    <div>
+      <header className="section-navbar">
+        <section className="top-txt">
+          <div className="head container">
+            <div className="head-txt">
+              <p> Get Membership, for Your Fortune</p>
+            </div>
+            <div className="sign-in-up">
+              <a href="#">SIGN IN</a>
+              <a href="#">SIGN UP</a>
+            </div>
+          </div>
+        </section>
+        <div className="container">
+          <div className="navbar-brand">
+            <a href="index">
+              <p>Rajesh flix</p>
+            </a>
+          </div>
+          <nav className="navbar">
+            <ul>
+              <li className="nav-item">
+                <a href="/" className="nav-link">Home</a>
+              </li>
+              <li className="nav-item">
+                <a href="/about" className="nav-link">About</a>
+              </li>
+              <li className="nav-item">
+                <a href="/services" className="nav-link">Services</a>
+              </li>
+              <li className="nav-item">
+                <a href="contact" className="nav-link">COntact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  );
+};
