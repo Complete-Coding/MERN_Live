@@ -1,0 +1,34 @@
+>>> Git Commands 
+ ----------------
+
+ >> git reflog
+    > Purpose : Shows the  history of where HEAD has pointed. 
+    > Usage : Ideal for undoing resets or finding lost commits.
+
+    ex:-
+    PS C:\Users\dell\Desktop\MERN_Live_KGcoding> git reflog
+    d948291 (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: pull: Fast-forward
+    eb54f0c (origin/checkout, origin/Test_-Branch, checkout) HEAD@{1}: checkout: moving from Preet-Chauhan to main
+    2f4b9c8 (origin/Preet-Chauhan, Preet-Chauhan) HEAD@{2}: checkout: moving from main to Preet-Chauhan
+    eb54f0c (origin/checkout, origin/Test_-Branch, checkout) HEAD@{3}: checkout: moving from Preet-Chauhan to main
+    2f4b9c8 (origin/Preet-Chauhan, Preet-Chauhan) HEAD@{4}: commit: Added a Project
+    eb54f0c (origin/checkout, origin/Test_-Branch, checkout) HEAD@{5}: checkout: moving from main to Preet-Chauhan
+    eb54f0c (origin/checkout, origin/Test_-Branch, checkout) HEAD@{6}: checkout: moving from checkout to main
+    eb54f0c (origin/checkout, origin/Test_-Branch, checkout) HEAD@{7}: checkout: moving from main to checkout
+    eb54f0c (origin/checkout, origin/Test_-Branch, checkout) HEAD@{8}: clone: from https://github.com/Preets-Version-77331/MERN_Live_KGcoding.git
+    PS C:\Users\dell\Desktop\MERN_Live_KGcoding>
+----------------------------------------------------------------------------------------
+
+ >> git blame 
+    > Purpose : Shows who last modified each line in a file, along with the commit 
+                details.
+    > Usage :  Useful for identifiying responsibility for code changes.
+
+    ex:-
+    PS C:\Users\dell\Desktop\MERN_Live_KGcoding>  git blame '.\007 Student Contributions\Preet_Chauhan\Git Advance\Git.txt'
+
+    00000000 (Not Committed Yet 2024-09-24 02:12:27 +0530  1) >>> Git Commands
+    00000000 (Not Committed Yet 2024-09-24 02:12:27 +0530  2)  ----------------
+    00000000 (Not Committed Yet 2024-09-24 02:12:27 +0530  3) 
+    00000000 (Not Committed Yet 2024-09-24 02:12:27 +0530  4)  >> git reflog
+    00000000 (Not Committed Yet 2024-09-24 02:12:27 +0530  5)     > Purpose : Shows the  history of where HEAD has pointed. EAD has pointed.
