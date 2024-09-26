@@ -6,6 +6,10 @@ const AddTodo = () => {
     console.log(`Trying to add item`);
   }
 
+  const textChangeHandler = (event) => {
+    console.log(event.target.value, event);
+  }
+
   return (
     <div className="container">
       <div className="row kg-row">
@@ -14,6 +18,7 @@ const AddTodo = () => {
             type="text"
             className="form-control"
             placeholder="Enter Todo Here"
+            onChange={textChangeHandler}
           ></input>
         </div>
         <div className="col-3">
