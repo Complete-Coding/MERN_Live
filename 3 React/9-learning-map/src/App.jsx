@@ -2,7 +2,8 @@ import List from "./components/List"
 
 function App() {
   
-  const studentArr = ["Nirmala", "Aman", "Akash", "Amanullah", "Abhijeet", "Gopi"];
+  // const studentArr = ["Nirmala", "Aman", "Akash", "Amanullah", "Abhijeet", "Gopi"];
+  let studentArr;
 
   return (
     <>

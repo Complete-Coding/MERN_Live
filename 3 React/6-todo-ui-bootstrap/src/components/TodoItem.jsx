@@ -2,7 +2,8 @@ import Button from "./Button";
 
 const TodoItem = ({ id, todoText, todoDate }) => {
 
-  const deleteHandler = () => {
+  const deleteHandler = (event) => {
+    console.log(event);
     console.log(`Trying to delete ${id} ${todoText}`);
   }
 
