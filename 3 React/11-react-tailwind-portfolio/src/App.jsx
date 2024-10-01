@@ -1,11 +1,11 @@
-import AboutMe from "./components/AboutMe"
-import Contact from "./components/Contact"
-import Education from "./components/Education"
-import Extracurricular from "./components/Extracurricular"
-import Header from "./components/Header"
-import Hobbies from "./components/Hobbies"
-import Projects from "./components/Projects"
-import Skills from "./components/Skills"
+import AboutMe from "./components/AboutMe";
+import Contact from "./components/Contact";
+import Education from "./components/Education";
+import Extracurricular from "./components/Extracurricular";
+import Header from "./components/Header";
+import Hobbies from "./components/Hobbies";
+import Projects from "./components/project/Projects";
+import Skills from "./components/Skills";
 
 function App() {
   return (
@@ -19,10 +19,9 @@ function App() {
         <Hobbies />
         <Extracurricular />
         <Contact />
-
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
