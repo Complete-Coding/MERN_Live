@@ -1,15 +1,20 @@
+import { useState } from "react";
 import List from "./components/List"
 
 function App() {
-  const studentArr = ["Nirmala", "Aman", "Akash", "Amanullah", "Abhijeet", "Gopi"];
-  console.log("Came to paint App component");
-  console.log(studentArr);
-  
+
+  const [studentArr, setStudentArr] = useState(["Nirmala", "Aman", "Akash", "Amanullah", "Abhijeet", "Gopi"]);
+
+  console.log("Painting App Component");
+  console.log("State Value is:", studentArr);
+
   const onChangeHandler = (event) => {
     if (event.key === "Enter") {
       console.log(event.target.value);
-      studentArr.push(event.target.value);
-      console.log(studentArr);
+      const newArr = [event.target.value, ...studentArr];
+      event.target.value = '';
+      setStudentArr(newArr);
+      console.log(newArr);
     }
   }
 
