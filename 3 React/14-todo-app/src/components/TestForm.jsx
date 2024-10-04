@@ -18,7 +18,6 @@ const TestForm = () => {
 
   return (
     <div>
-      <h1>StateValue:{firstNameVal} RefValue: {clicks.current} times</h1>
       <form action="/submit-data" onSubmit={submitHandler}>
         <input type="text" ref={firstName} placeholder='First Name' name="firstName" onKeyDown={firstNameChangeHandler} /> <br />
         <input type="text" ref={lastName} placeholder='Last Name' name="lastName"/><br />
@@ -26,7 +25,6 @@ const TestForm = () => {
         <input id="dob" ref={dob} type="date" name="dob"/><br />
         <input type="submit"/>
       </form>
-
     </div>
   )
 }
