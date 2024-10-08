@@ -4,13 +4,11 @@ import TodoItems from "./components/TodoItems";
 
 function App() {
   return (
-    <>
-      <center>
-        <AppName />
-        <AddTodo />
-        <TodoItems />
-      </center>
-    </>
+    <center>
+      <AppName />
+      <AddTodo />
+      <TodoItems />
+    </center>
   );
 }
 
