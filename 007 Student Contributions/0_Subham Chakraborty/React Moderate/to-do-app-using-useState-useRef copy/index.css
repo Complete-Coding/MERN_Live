@@ -1,0 +1,9 @@
+
+
+body{
+
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 5px;
+}
