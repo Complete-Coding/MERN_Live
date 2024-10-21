@@ -1,0 +1,59 @@
+
+.red-button {
+  background-color: red;
+  color: aliceblue;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.green-button  {
+  background-color: green;
+  color: aliceblue;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.test-button  {
+  background-color: rgba(7, 78, 78, 0.959);
+  color: aliceblue;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.TodoItems{
+  margin: 10px;
+  padding: 10px;
+}
+
+.Appname{
+  font-size: 50px;
+  font-weight: bold;
+  padding-right: 100px;
+  
+}
+.AddTodo{
+  margin: 10px;
+  padding:6px;
+}
+.TodoItems{
+  background-color: white;
+  
+  padding: 6px;
+  /* margin: 20px; */
+  border-radius: 12px;
+
+}
+
+.padding{
+  text-align: center;
+  
+  color: black;
+
+  font-weight: bolder;
+}
+.button {
+ min-width: 70px;
+}
