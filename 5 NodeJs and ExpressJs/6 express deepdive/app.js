@@ -1,13 +1,14 @@
 // External Module
 const express = require('express');
 const fs = require('fs');
-
-const {URLSearchParams} = require('url');
+const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.urlencoded());
+
 app.use((req, res, next) => {
-  console.log('Request Received', req.url, req.method);
+  console.log('Request Received', req.url, req.method, req.body);
   next();
 });
 
@@ -32,27 +33,10 @@ app.get("/", (req, res, next) => {
 });
 
 app.post("/buy-product", (req, res, next) => {
-  console.log("Form data received.");
-  const buffer = [];
-  req.on('data', (chunk) => {
-    console.log(chunk);
-    buffer.push(chunk);
-  });
-  req.on('end', () => {
-    const body = Buffer.concat(buffer).toString();
-    const urlParams = new URLSearchParams(body);
-    const bodyJson = {};
-    //[["product", "Jeans"], ["price", "1299"]]
-    for (const [key, value] of urlParams.entries()) {
-      bodyJson[key] = value;
-    }
-    console.log(JSON.stringify(bodyJson));
-    fs.writeFile('buy.txt', JSON.stringify(bodyJson), (err) => {
-      res.statusCode = 302;
-      res.setHeader('Location', '/products');
-      res.end();
-      console.log('Sending Response');
-    });
+  fs.writeFile('buy.json', JSON.stringify(req.body), (err) => {
+    res.statusCode = 302;
+    res.setHeader('Location', '/products');
+    res.end();
   });
 });
 
