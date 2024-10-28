@@ -1,31 +1,25 @@
+// Core Modules
+const path = require("path");
+
 // External Module
-const express = require('express');
-const fs = require('fs');
-const bodyParser = require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
+
+// Local Module
+const hostRouter = require("./routers/hostRouter");
+const storeRouter = require("./routers/storeRouter");
+const rootDir = require('./util/path-util');
 
 const app = express();
 
-app.use(bodyParser.urlencoded());
-
-app.use((req, res, next) => {
-  console.log('Request Received', req.url, req.method, req.body);
-  next();
-});
+app.use(express.static(path.join(rootDir, "public")));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(storeRouter);
+app.use("/host", hostRouter);
 
 app.use((req, res, next) => {
   res.statusCode = 404;
-  res.write(`
-    <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <title>Page Not Found</title>
-      </head>
-      <body>
-        <h1>404 Page Not Found</h1>
-      </body>
-      </html>
-    `);
-  res.end();
+  res.sendFile(path.join(rootDir, "views", "404.html"));
 });
 
 const PORT = 3001;
