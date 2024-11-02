@@ -1,0 +1,20 @@
+<%- include('partials/head') %>
+</head>
+<body class="min-h-screen bg-gray-100">
+  <%- include('partials/nav') %>
+  <main class="py-12 px-4">
+    <div class="container mx-auto max-w-7xl">
+      <h1 class="text-6xl font-bold text-blue-700 mb-16 text-center tracking-tight">Welcome to Hamara airbnb</h1>
+      <div class="max-w-5xl mx-auto">
+        <ul class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <% homes.forEach(home => { %>
+            <li class="bg-white shadow-lg rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <span class="text-gray-900 text-xl font-semibold block"><%= home.houseName %></span>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
