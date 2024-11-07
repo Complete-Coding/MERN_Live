@@ -1,4 +1,4 @@
-const Home = require("./../models/Home");
+const Home = require("../models/Home");
 
 exports.getAddHome = (req, res, next) => {
   res.render("host/edit-home", { editing: false, pageTitle: "Host Your Home" });
@@ -51,18 +51,18 @@ exports.postEditHome = (req, res, next) => {
       res.redirect("/host/host-homes");
     }
   });
-}
+};
 
 exports.postDeleteHome = (req, res, next) => {
   const homeId = req.params.homeId;
   console.log("Came to delete ", homeId);
-  Home.deleteById(homeId, error => {
+  Home.deleteById(homeId, (error) => {
     if (error) {
       console.log("Error occured while deleting home: ", error);
     }
     res.redirect("/host/host-homes");
-  })
-}
+  });
+};
 
 exports.getHostHomes = (req, res, next) => {
   Home.fetchAll((registeredHomes) => {

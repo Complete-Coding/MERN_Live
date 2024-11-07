@@ -4,7 +4,7 @@
   <%- include('../partials/nav') %>
   <main class="py-12 px-4">
     <div class="container mx-auto max-w-7xl">
-      <h1 class="text-6xl font-bold text-blue-700 mb-16 text-center tracking-tight">Here are your favourites</h1>
+      <h1 class="text-6xl font-bold text-blue-700 mb-16 text-center tracking-tight">Welcome to Hamara airbnb</h1>
       <div class="max-w-6xl mx-auto">
         <div class="flex flex-wrap gap-8 justify-center">
           <% homes.forEach(home => { %>
@@ -27,16 +27,9 @@
                 </div>
                 <div class="flex items-center justify-between">
                   <span class="text-2xl font-bold text-blue-600">Rs<%= home.price %></span>
-
-                  <a 
-                  href="/homes/<%= home.id %>"
-                  class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
-                    Details
-                  </a>
-
-                  <form action="/favourites/delete/<%= home.id %>" method="POST">
-                    <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">Remove from Favourite</button>
-                  </form>
+                  <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                    Book Now
+                  </button>
                 </div>
               </div>
             </div>
