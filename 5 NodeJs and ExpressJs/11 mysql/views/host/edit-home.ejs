@@ -1,0 +1,55 @@
+<%- include('../partials/head') %>
+</head>
+<body class="min-h-screen bg-gray-100">
+  <%- include('../partials/nav') %>
+    <h1 class="text-4xl font-bold text-blue-600 mb-8 text-center mt-8"><%= editing ? "Edit" : "Add"%> your Home</h1>
+    <div class="flex justify-center">
+      <form action="/host/<%= editing ? "edit-home" : "add-home"%>" method="POST" class="w-full max-w-md">
+        <input type="hidden" name="id" value="<%= editing ? home.id : ''%>" />
+        <input 
+          type="text" 
+          name="houseName"
+          value="<%= editing ? home.houseName : ''%>"
+          placeholder="Name of your house"
+          class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+        />
+        <input 
+          type="text" 
+          name="price"
+          value="<%= editing ? home.price : ''%>"
+          placeholder="Daily rent of your home"
+          class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+        />
+        <input 
+          type="text" 
+          name="location"
+          value="<%= editing ? home.location : ''%>"
+          placeholder="Where is your home"
+          class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+        />
+        <input 
+          type="text" 
+          name="rating"
+          value="<%= editing ? home.rating : ''%>"
+          placeholder="Rating of the house"
+          class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+        />
+        <input 
+          type="text" 
+          name="photoUrl"
+          value="<%= editing ? home.photoUrl : ''%>"
+          placeholder="Upload a photo"
+          class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+        />
+        <div class="flex justify-center">
+          <input 
+            type="submit" 
+            value="<%= editing ? "Update" : "Add"%> Home"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer"
+          >
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
