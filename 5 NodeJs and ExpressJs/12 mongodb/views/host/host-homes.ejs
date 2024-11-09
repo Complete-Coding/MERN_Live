@@ -29,11 +29,11 @@
                   <span class="text-2xl font-bold text-blue-600">Rs<%= home.price %></span>
 
                   <a 
-                  href="/host/edit-home/<%= home.id %>?editing=true"
+                  href="/host/edit-home/<%= home._id %>?editing=true"
                   class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors">
                     Edit
                   </a>
-                  <form action="/host/delete-home/<%= home.id %>" method="post">
+                  <form action="/host/delete-home/<%= home._id %>" method="post">
                     <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">Delete</button>
                   </form>
                 </div>

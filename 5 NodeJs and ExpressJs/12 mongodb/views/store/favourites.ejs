@@ -29,12 +29,12 @@
                   <span class="text-2xl font-bold text-blue-600">Rs<%= home.price %></span>
 
                   <a 
-                  href="/homes/<%= home.id %>"
+                  href="/homes/<%= home._id %>"
                   class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
                     Details
                   </a>
 
-                  <form action="/favourites/delete/<%= home.id %>" method="POST">
+                  <form action="/favourites/delete/<%= home._id %>" method="POST">
                     <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">Remove from Favourite</button>
                   </form>
                 </div>
