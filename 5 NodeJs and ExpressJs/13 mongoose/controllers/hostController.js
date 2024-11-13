@@ -56,24 +56,24 @@ exports.postAddHome = (req, res, next) => {
 exports.postEditHome = (req, res, next) => {
   const { id, houseName, price, location, rating, photoUrl, description } =
     req.body;
-    // business logic outside model
-    Home.findById(id)
-      .then((existingHome) => {
-        if (!existingHome) {
-          console.log("Home not found for editing");
-          return res.redirect("/host/host-homes");
-        }
-        existingHome.houseName = houseName;
-        existingHome.price = price;
-        existingHome.location = location;
-        existingHome.rating = rating;
-        existingHome.photoUrl = photoUrl;
-        existingHome.description = description;
-        return existingHome.save();
-      })
-      .finally(() => {
+  // business logic outside model
+  Home.findById(id)
+    .then((existingHome) => {
+      if (!existingHome) {
+        console.log("Home not found for editing");
         return res.redirect("/host/host-homes");
-      });
+      }
+      existingHome.houseName = houseName;
+      existingHome.price = price;
+      existingHome.location = location;
+      existingHome.rating = rating;
+      existingHome.photoUrl = photoUrl;
+      existingHome.description = description;
+      return existingHome.save();
+    })
+    .finally(() => {
+      return res.redirect("/host/host-homes");
+    });
 };
 
 exports.postDeleteHome = (req, res, next) => {
