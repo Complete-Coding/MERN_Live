@@ -2,7 +2,7 @@ const Favourite = require("../models/Favourite");
 const Home = require("../models/Home");
 
 exports.getIndex = (req, res, next) => {
-  Home.fetchAll().then((registeredHomes) => {
+  Home.find().then((registeredHomes) => {
     res.render("store/index", {
       homes: registeredHomes,
       pageTitle: "Tumahara airbnb",
@@ -11,7 +11,7 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getHomes = (req, res, next) => {
-  Home.fetchAll().then((registeredHomes) => {
+  Home.find().then((registeredHomes) => {
     res.render("store/homes", {
       homes: registeredHomes,
       pageTitle: "Tumahara airbnb",
@@ -21,7 +21,7 @@ exports.getHomes = (req, res, next) => {
 
 exports.getFavourites = (req, res, next) => {
   Favourite.fetchAll().then((favouriteIds) => {
-    Home.fetchAll().then((registeredHomes) => {
+    Home.find().then((registeredHomes) => {
       favouriteIds = favouriteIds.map((favId) => favId.homeId);
 
       console.log(favouriteIds, registeredHomes);
