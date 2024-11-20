@@ -5,18 +5,21 @@
         airbnb
       </a>
       <% if (isLoggedIn) { %>
-        <a href="/homes" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
-          Homes
-        </a>
-        <a href="/favourites" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
-          Favourites
-        </a>
-        <a href="/host/host-homes" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
-          Host Homes
-        </a>
-        <a href="/host/add-home" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
-          Add Home
-        </a>
+        <% if (user.userType === 'guest') { %>
+          <a href="/homes" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+            Homes
+          </a>
+          <a href="/favourites" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+            Favourites
+          </a>
+        <% } else { %>
+          <a href="/host/host-homes" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+            Host Homes
+          </a>
+          <a href="/host/add-home" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+            Add Home
+          </a>
+        <% } %>
       <% } %>
     </div>
     <div class="flex space-x-4">
