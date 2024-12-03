@@ -7,12 +7,14 @@ import { TodoItemsProvider } from "./store/TodoItemsContext";
 function App() {
   return (
     <TodoItemsProvider>
-      <center>
-        <AppName />
-        <AddTodo />
-        <LoadItems />
-        <TodoItems />
-      </center>
+      <div className="min-h-screen bg-gray-50">
+        <div className="container mx-auto px-4">
+          <AppName />
+          <AddTodo />
+          <LoadItems />
+          <TodoItems />
+        </div>
+      </div>
     </TodoItemsProvider>
   );
 }

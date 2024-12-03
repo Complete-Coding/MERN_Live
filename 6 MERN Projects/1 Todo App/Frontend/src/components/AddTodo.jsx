@@ -31,20 +31,20 @@ const AddTodo = () => {
   }
 
   return (
-    <div className="container">
-      <div className="row kg-row">
-        <div className="col-5">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter Todo Here"
-            ref={todoTextInput}
-          />
-        </div>
-        <div className="col-3">
-          <input type="date" ref={todoDateInput} className="form-control"/>
-        </div>
-        <div className="col-2">
+    <div className="max-w-3xl mx-auto px-4 mb-8">
+      <div className="flex flex-col sm:flex-row gap-4">
+        <input
+          type="text"
+          className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter Todo Here"
+          ref={todoTextInput}
+        />
+        <input 
+          type="date" 
+          ref={todoDateInput} 
+          className="w-full sm:w-48 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div className="w-full sm:w-auto">
           <Button btnType="success" btnText="Add" handler={addHandler}/>
         </div>
       </div>
