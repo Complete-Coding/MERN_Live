@@ -1,16 +1,22 @@
-import ExampleComponent from "./components/ExampleComponent";
-import { ExampleProvider } from "./store/ExampleContext";
+import CreateBlog from "./components/CreateBlog";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+import { BlogProvider } from "./store/BlogContext";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <ExampleProvider>
-      <div className="min-h-screen bg-gray-100">
-        <div className="py-8">
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Example App</h1>
-          <ExampleComponent />
+    <BrowserRouter>
+      <BlogProvider>
+        <NavBar />
+        <div className="min-h-screen bg-gray-100 py-8">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create-blog" element={<CreateBlog />} />
+          </Routes>
         </div>
-      </div>
-    </ExampleProvider>
+      </BlogProvider>
+    </BrowserRouter>
   );
 }
 

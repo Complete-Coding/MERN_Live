@@ -4,16 +4,13 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"No tests specified\" && exit 0",
-    "tailwind": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch",
-    "start": "concurrently \"npm run tailwind\" \"nodemon app.js\""
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "concurrently": "^9.0.1",
-    "nodemon": "^3.1.7",
-    "tailwindcss": "^3.4.14"
+    "nodemon": "^3.1.7"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.4",
@@ -21,6 +18,7 @@
     "body-parser": "^1.20.3",
     "compression": "^1.7.5",
     "connect-mongodb-session": "^5.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
