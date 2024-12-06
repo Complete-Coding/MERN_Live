@@ -1,12 +1,12 @@
-const Conversation = require("../models/Conversation");
-const { generateContent, generateTitle } = require("../service/geminiService");
+import Conversation from "../models/Conversation.js";
+import { generateContent, generateTitle } from "../service/chatgptService.js";
 
-exports.getConversations = async (req, res, next) => {
+export const getConversations = async (req, res, next) => {
   const conversations = await Conversation.find();
   res.json(conversations);
 }
 
-exports.newConversation = async (req, res, next) => {
+export const newConversation = async (req, res, next) => {
   const { prompt, model } = req.body;
   const content = await generateContent(prompt, model);
   const messages = [{role: "user", content: prompt}, {role: "assistant", content: content}];
@@ -17,7 +17,7 @@ exports.newConversation = async (req, res, next) => {
   res.status(201).json(conversation);
 }
 
-exports.newMessage = async (req, res, next) => {
+export const newMessage = async (req, res, next) => {
   const { id } = req.params;
   const { prompt } = req.body;
   const conversation = await Conversation.findById(id);
@@ -32,7 +32,7 @@ exports.newMessage = async (req, res, next) => {
   res.json(conversation);
 }
 
-exports.deleteConversation = async (req, res, next) => {
+export const deleteConversation = async (req, res, next) => {
   const { id } = req.params;
   await Conversation.findByIdAndDelete(id);
   res.status(204).json({message: "Conversation deleted"});

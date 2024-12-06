@@ -1,16 +1,22 @@
-import ExampleComponent from "./components/ExampleComponent";
-import { ExampleProvider } from "./store/ExampleContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ChatLayout from "./layout/ChatLayout";
+import Chat from "./components/Chat";
+import { ChatProvider } from "./store/ChatContext";
 
 function App() {
   return (
-    <ExampleProvider>
-      <div className="min-h-screen bg-gray-100">
-        <div className="py-8">
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Example App</h1>
-          <ExampleComponent />
+    <BrowserRouter>
+      <ChatProvider>
+        <div className="min-h-screen bg-gray-100">
+          <Routes>
+            <Route path="/" element={<ChatLayout />}>
+              <Route path="/" element={<Chat />} />
+              <Route path="/conversation/:id" element={<Chat />} />
+            </Route>
+          </Routes>
         </div>
-      </div>
-    </ExampleProvider>
+      </ChatProvider>
+    </BrowserRouter>
   );
 }
 

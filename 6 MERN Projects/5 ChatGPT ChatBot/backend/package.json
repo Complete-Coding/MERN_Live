@@ -2,6 +2,7 @@
   "name": "mern-live-backend",
   "version": "1.0.0",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"No tests specified\" && exit 0",
     "start": "nodemon app.js"
@@ -31,6 +32,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.11.4",
+    "openai": "^4.76.0",
     "react-markdown": "^9.0.1"
   }
 }
