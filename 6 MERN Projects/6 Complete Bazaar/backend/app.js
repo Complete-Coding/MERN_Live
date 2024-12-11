@@ -10,6 +10,7 @@ const cors = require("cors");
 const errorController = require("./controllers/errorController");
 const sellerRouter = require('./routers/sellerRouter');
 const authRouter = require('./routers/authRouter');
+const { isLoggedIn, isSeller } = require('./middleware/auth');
 const MONGO_DB_URL =
   `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@kgcluster.ie6mb.mongodb.net/${process.env.MONGO_DB_DATABASE}`;
 
@@ -19,7 +20,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/api/auth', authRouter);
-app.use('/api/seller', sellerRouter);
+app.use('/api/seller', isLoggedIn, isSeller, sellerRouter);
 app.use(errorController.get404);
 
 const PORT = process.env.PORT || 3000;

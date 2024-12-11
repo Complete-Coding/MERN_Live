@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const AddProduct = () => {
   const nameRef = useRef();
@@ -10,8 +11,9 @@ const AddProduct = () => {
   const ratingRef = useRef();
   const imageRef = useRef();
   const navigate = useNavigate();
+  const {token} = useSelector(state => state.auth);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Create FormData object to properly send multipart/form-data
@@ -24,15 +26,20 @@ const AddProduct = () => {
     formData.append('rating', ratingRef.current.value);
     formData.append('image', imageRef.current.files[0]);
 
-    fetch("http://localhost:3000/api/seller/products", {
+    const response = await fetch("http://localhost:3000/api/seller/products", {
       method: "POST",
       body: formData,
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      navigate("/");
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
+    
+    if (response.status === 201) {
+      navigate("/");
+    } else {
+      const data = await response.json();
+      console.log(data);
+    }
   }
 
   return (
@@ -45,7 +52,7 @@ const AddProduct = () => {
             type="text"
             id="name"
             ref={nameRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
           />
         </div>
         <div>
@@ -54,7 +61,7 @@ const AddProduct = () => {
             type="text"
             id="brand"
             ref={brandRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
           />
         </div>
         <div>
@@ -63,7 +70,7 @@ const AddProduct = () => {
             id="description"
             ref={descriptionRef}
             rows={3}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
           />
         </div>
         <div>
@@ -72,7 +79,7 @@ const AddProduct = () => {
             type="number"
             id="price"
             ref={priceRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
           />
         </div>
         <div>
@@ -81,7 +88,7 @@ const AddProduct = () => {
             type="text"
             id="category"
             ref={categoryRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
           />
         </div>
         <div>
@@ -92,7 +99,7 @@ const AddProduct = () => {
             min="1"
             max="5"
             ref={ratingRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
           />
         </div>
         <div>

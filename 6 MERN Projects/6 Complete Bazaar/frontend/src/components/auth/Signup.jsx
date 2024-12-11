@@ -1,7 +1,9 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import ErrorMessages from '../common/ErrorMessages';
 
 const Signup = () => {
+  const [errorMessages, setErrorMessages] = useState([]);
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const emailRef = useRef();
@@ -12,6 +14,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrorMessages([]);
     fetch("http://localhost:3000/api/auth/signup", {
       method: "POST",
       headers: {
@@ -26,17 +29,22 @@ const Signup = () => {
         userType: userTypeRef.current.value,
       }),
     })
-    .then(res => res.json())
     .then(res => {
       if (res.status === 201) {
         navigate("/login");
+      } else {
+        return res.json();
       }
-    });
+    })
+    .then(({errorMessages}) => setErrorMessages(errorMessages))
+    .catch(error => setErrorMessages([error.message]));
   }
 
   return (
     <div className="max-w-md mx-auto p-6">
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Sign Up</h1>
+      <ErrorMessages errorMessages={errorMessages} />
+      
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
@@ -44,7 +52,7 @@ const Signup = () => {
             type="text"
             id="firstName"
             ref={firstNameRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
             required
           />
         </div>
@@ -54,7 +62,7 @@ const Signup = () => {
             type="text"
             id="lastName"
             ref={lastNameRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
             required
           />
         </div>
@@ -64,7 +72,7 @@ const Signup = () => {
             type="email"
             id="email"
             ref={emailRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
             required
           />
         </div>
@@ -73,7 +81,7 @@ const Signup = () => {
           <select
             id="userType"
             ref={userTypeRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
             required
           >
             <option value="customer">Customer</option>
@@ -86,7 +94,7 @@ const Signup = () => {
             type="password"
             id="password"
             ref={passwordRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
             required
           />
         </div>
@@ -96,7 +104,7 @@ const Signup = () => {
             type="password"
             id="confirmPassword"
             ref={confirmPasswordRef}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-2 py-1"
             required
           />
         </div>
