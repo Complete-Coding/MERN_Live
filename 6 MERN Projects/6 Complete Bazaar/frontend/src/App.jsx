@@ -6,6 +6,8 @@ import AddProduct from "./components/seller/AddProduct";
 import SellerHome from "./components/seller/SellerHome";
 import NavBar from "./nav/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cart from "./components/customer/cart/Cart";
+import Orders from "./components/customer/Orders";
 
 function App() {
   const { userType } = useSelector((state) => state.auth);
@@ -16,10 +18,17 @@ function App() {
         <div>
           <NavBar />
           <Routes>
-            <Route path="/" element={userType === 'seller' ? <SellerHome /> : <CustomerHome />} />
+            <Route
+              path="/"
+              element={
+                userType === "seller" ? <SellerHome /> : <CustomerHome />
+              }
+            />
             <Route path="/add-product" element={<AddProduct />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
         </div>
       </div>

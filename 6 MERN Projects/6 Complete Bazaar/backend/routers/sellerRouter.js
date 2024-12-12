@@ -15,5 +15,6 @@ const storage = multer.diskStorage({
 
 sellerRouter.post("/products", multer({storage: storage}).single('image'), sellerController.createProduct);
 sellerRouter.get("/products", sellerController.getProducts);
+sellerRouter.delete("/products/:id", sellerController.deleteProduct);
 
 module.exports = sellerRouter;
