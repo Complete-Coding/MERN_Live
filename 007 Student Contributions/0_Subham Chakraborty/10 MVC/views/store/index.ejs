@@ -1,0 +1,26 @@
+<%- include('../global-parts/head') %>
+  </head>
+<%- include('../global-parts/nav') %>
+    <body class="bg-gray-100 text-gray-800">
+    <div class="max-w-4xl mx-auto py-10">
+        <h1 class="text-3xl font-bold text-center mb-4">airbnb</h1>
+        <div class="text-center">
+            <a href='/host/AddHome' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Add Home
+            </a>
+        </div>
+        <div class="flex flex-wrap justify-center mt-6">
+          <% homes.forEach(home => { %>
+          <div class="max-w-sm w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4">
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h2 class="text-xl font-bold text-gray-800 px-4 pt-4 mb-2">
+                <%= home.homeName %>
+              </h2>
+              <p class="text-gray-600 px-4 pb-4">Description about <%= home.homeName %></p>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+    </div>
+    </body>
+    </html>

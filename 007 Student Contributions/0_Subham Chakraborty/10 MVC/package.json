@@ -1,0 +1,21 @@
+{
+  "name": "8-express-advance",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch",
+    "start": " nodemon app.js & npm run tailwind "
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

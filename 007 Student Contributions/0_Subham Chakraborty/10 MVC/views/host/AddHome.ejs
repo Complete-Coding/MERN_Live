@@ -1,0 +1,15 @@
+<%- include('../global-parts/head') %>
+</head>
+<body>
+    <%- include('../global-parts/nav') %>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="max-w-4xl mx-auto py-10">
+      <form method="POST" action="/host/AddHome/" class="flex flex-col items-center">
+        <h1 class="text-4xl font-bold text-red-500 mb-4">Hello</h1>
+        <label for="homeName" class="text-3xl font-semibold text-red-500 mb-2">Enter home:</label>
+        <input type="text" id="homeName" name="homeName" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none">
+        <input type="submit" value="Add Home" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      </form>
+    </div>
+  </body>
+</html>
