@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect</title>
+    <style>
+        .chat-message {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chatbox">
+        <p class="chat-message">i am main only</p>
+    </div>
+
+    <script>
+        function typeText(element, text, speed = 50) {
+            let index = 0;
+            function type() {
+                if (index < text.length) {
+                    element.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        const message = "Hello! How can I assist you today?";
+        const chatMessage = document.querySelector(".chat-message");
+
+        typeText(chatMessage, message, 50); 
+    </script>
+    
+</body>
+</html>
